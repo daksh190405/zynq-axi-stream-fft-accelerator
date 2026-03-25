@@ -18,6 +18,7 @@ The hardware is implemented using Vivado IP Integrator and includes:
 - Floating Point IP for post-processing
 - AXI Interconnect and SmartConnect for control path
 - System ILA for debugging and verification
+
 Streaming interfaces are used to enable efficient and high-throughput data transfer between modules.
 
 ## Data Flow
