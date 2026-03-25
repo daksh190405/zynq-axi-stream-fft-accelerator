@@ -21,15 +21,7 @@ The hardware is implemented using Vivado IP Integrator and includes:
 Streaming interfaces are used to enable efficient and high-throughput data transfer between modules.
 
 ## Data Flow
-DDR Memory (PS)
-↓
-AXI DMA (MM2S)
-↓
-FFT → Width Converter → Floating Point
-↓
-AXI DMA (S2MM)
-↓
-DDR Memory (PS)
+DDR → AXI DMA → FFT → Width Converter → Floating Point → AXI DMA → DDR 
 
 ### Execution Steps
 1. Input data is stored in DDR memory
@@ -86,14 +78,12 @@ zynq-axi-stream-fft-accelerator/
 └── README.md
 
 ## How to Run
-
 ### Vivado (Hardware)
-
 1. Open the Vivado project
 2. Generate bitstream
 3. Export hardware (along with bitstream).
-### SDK (Software)
 
+### SDK (Software)
 1. Create new project using exported bitstream.
 2. Add the source file from `software/`
 3. Build and run the application on hardware
